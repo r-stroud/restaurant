@@ -1,5 +1,5 @@
-.container {
-}
+/*.container {
+} 
 
 #cristi {
 }
@@ -11,4 +11,35 @@
 }
 
 #robert {
+}
+*/
+
+body {
+    /*background-color: #96c9dc;
+    background-color: #61a0af;*/
+    background-color: #f06c9b;
+    /*background-color: #f9b9b7;
+    background-color: #f5d491;*/
+    margin: 0px;
+    padding: 0px;
+    
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    border-bottom: 10px solid black;
+    padding-bottom: 5px;
+    background-color: #f5d491;
+    padding: 5px 5px 5px 5px;
+    font-size: 3vw;
+}
+
+nav {
+    position: fixed;
+    width: 100%;
+    height: 7%;
+    margin-top: -52px;
 }
