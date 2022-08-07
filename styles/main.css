@@ -1,4 +1,20 @@
 .container {
+  display: flex;
+  /* flex-wrap: wrap;
+  justify-content: space-around; */
+}
+
+.container > * {
+  flex: 1 100%;
+}
+
+.flex-item {
+  width: 100px;
+  height: 100px;
+  margin: auto;
+  border-radius: 10px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.6);
+  background-color: lightseagreen;
 }
 
 #cristi {
