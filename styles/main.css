@@ -39,8 +39,8 @@ nav ul {
   border-left: 3px solid black;
   padding-bottom: 5px;
   background-color: #f5d491;
-  padding: 2px 5px 10px 5px;
-  font-size: 1.5vw;
+  padding: 0px 5px 10px 5px;
+  font-size: 18px;
   margin: 0px;
   /* added margin 0 to fix the nav par position */
 }
@@ -53,10 +53,27 @@ nav {
   left: 0px;
 }
 
+.title {
+  align-self: flex-end;
+  margin-left: 0%;
+  padding-right: 2%;
+  position: relative;
+}
+
+.title:after {
+  content: "";
+  position: absolute;
+  bottom: -12px;
+  right: -15px;
+  height: 100px;
+  width: 1px;
+  background-color: black;
+}
+
 nav img {
-  border: black 3px solid;
+  border: black 1px solid;
   border-radius: 100%;
-  width: 1.8vw;
+  width: 25px;
   margin-right: 8px;
   margin-bottom: 5px;
   position: relative;
