@@ -25,13 +25,21 @@
   <main class="container">
     <section class="flex-item" id="cristi"></section>
     <section class="flex-item" id="alex"></section>
-    <section class="flex-item" id="taylor"></section>
+    <section class="flex-item" id="taylor">
+      <div>
+        <h1>taylor</h1>
+        <div id="taylorText">This is the paragraph that I would like to change</div>
+        <script>
+          document.getElementById('taylorText').innerHTML = taylor();
+        </script>
+    </section>
     <section class="flex-item" id="robert">
     </section>
   </main>
   <footer></footer>
   <script src="./scripts/main.js"></script>
   <script src="./scripts/taylor.js"></script>
+  <script src="./scripts/robert.js"></script>
 </body>
 
 </html>
