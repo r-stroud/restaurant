@@ -14,7 +14,6 @@
 }
 */
 
-
 body {
   /*background-color: #96c9dc;
     background-color: #61a0af;*/
@@ -97,7 +96,7 @@ h1 {
   margin: 10% 2%;
 }
 
-.container>* {
+.container > * {
   flex: 1 100%;
 }
 
@@ -108,4 +107,8 @@ h1 {
   border-radius: 10px;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.6);
   background-color: lightseagreen;
+}
+
+.flex-item p {
+  padding-left: 20px;
 }
