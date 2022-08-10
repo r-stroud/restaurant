@@ -1,32 +1,64 @@
-const party = {
-    partyID: 1,
-    partySize: 4,
-    tableID: 3,
-    order: [
-        {
-            menuID: 1,
-            drinkID: 3,
-            partyrestrictionID: 1,
-        },
-        {
-            menuID: 4,
-            drinkID: 1,
-            partyrestrictionID: 3,
-        },
-        {
-            menuID: 6,
-            drinkID: 5,
-            partyrestrictionID: 1,
-        },
-        {
-            menuID: 5,
-            drinkID: 5,
-            partyrestrictionID: 1,
-        }
-    ]
-}
+const partyRS = [
+    {
+        partyID: 1,
+        partySize: 4,
+        tableID: 3,
+        order: [
+            {
+                menuID: 1,
+                drinkID: 3,
+                partyrestrictionID: 1,
+            },
+            {
+                menuID: 4,
+                drinkID: 1,
+                partyrestrictionID: 3,
+            },
+            {
+                menuID: 6,
+                drinkID: 5,
+                partyrestrictionID: 1,
+            },
+            {
+                menuID: 5,
+                drinkID: 5,
+                partyrestrictionID: 1,
+            }
+        ]
+    },
+    {
+        partyID: 2,
+        partySize: 2,
+        tableID: 1,
+        order: [
+            {
+                menuID: 1,
+                drinkID: 3,
+                partyrestrictionID: 1,
+            },
+            {
+                menuID: 4,
+                drinkID: 1,
+                partyrestrictionID: 3,
+            },
+            {
+                menuID: 6,
+                drinkID: 5,
+                partyrestrictionID: 1,
+            },
+            {
+                menuID: 5,
+                drinkID: 5,
+                partyrestrictionID: 1,
+            }
+        ]
+    }
+]
 
-const menu = [
+
+// document.getElementById('taylorText').innerHTML = taylor();
+
+const menuRS = [
     {
         menuID: 1,
         item: "Everything Pizza",
@@ -59,7 +91,7 @@ const menu = [
     }
 ]
 
-drinkMenu = [
+const drinkMenuRS = [
     {
         drinkID: 1,
         item: "Water",
@@ -87,8 +119,51 @@ drinkMenu = [
     },
 ]
 
-const partyRestriction = [
+const partyRestrictionRS = [
     { Id: 1, restriction: 'none' },
     { Id: 2, restriction: 'gluten-free' },
     { Id: 3, restriction: 'peanut-free' },
 ];
+
+let test = ""
+
+let numRS = 1
+
+// for (const parties of partyRS) {
+//     test = test + `<h4>Party ID: ${parties.partyID}</h4>
+//     <h4>Party Size: ${parties.partySize}</h4>
+//     <h4>Table Number: ${parties.tableID}</h4>`
+//     for (const orders of parties.order) {
+//         test = test + `<h4>Order ${numRS++}: ${orders.menuID}, ${orders.drinkID}</h4>`
+//     }
+
+// }
+
+function matchMenuID(num) {
+    for (const menus of menuRS) {
+        if (menus.menuID === num)
+            return menus.item
+    }
+}
+
+function matchDrinkID(num) {
+    for (const menus of drinkMenuRS) {
+        if (menus.drinkID === num)
+            return menus.item
+    }
+}
+
+for (const parties of partyRS) {
+    test = test + `<h4>Party ID: ${parties.partyID}</h4>
+    <h4>Party Size: ${parties.partySize}</h4>
+    <h4>Table Number: ${parties.tableID}</h4>`
+    for (const orders of parties.order) {
+        test = test + `<h4>Order ${numRS++}: ${matchMenuID(orders.menuID)}, ${matchDrinkID(orders.drinkID)}</h4>`
+    }
+
+}
+
+
+
+document.getElementById("test1").innerHTML = test
+

@@ -1,4 +1,4 @@
-const table = [
+const tableTE = [
     { tableId: 1, numberOfSeats: 4, Booth: true },
 
     { tableId: 2, numberOfSeats: 8, Booth: false },
@@ -24,7 +24,7 @@ const table = [
     { tableId: 12, numberOfSeats: 4, Booth: true },
 ];
 
-const party = [
+const partyTE = [
     {
         partyOne: {
             partySize: 4,
@@ -54,15 +54,15 @@ const party = [
     },
 ];
 
-const partyRestriction = [
+const partyRestrictionTE = [
     { Id: 1, restriction: 'none' },
     { Id: 2, restriction: 'gluten-free' },
     { Id: 3, restriction: 'peanut-free' },
 ];
 
-const menu = [];
+const menuTE = [];
 
-const waiter = [
+const waiterTE = [
     { id: 1, name: 'Taylor' },
     { id: 2, name: 'Alex' },
     { id: 3, name: 'Robert' },
@@ -70,8 +70,7 @@ const waiter = [
 ];
 
 
-
-
+document.getElementById('taylorText').innerHTML = taylor();
 
 function taylor() {
     return waiter.toString();

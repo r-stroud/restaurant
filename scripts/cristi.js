@@ -20,9 +20,11 @@ console.log(waiter[3].name);
 document.getElementById('waiter').innerHTML = htmlString;
 
 let tableSetup = '';
+
 for (const table of tablesCN) {
   tableSetup =
     tableSetup +
     `<h4>table Id: ${table.tableId}</p><p>Party Size: ${table.partySize}</p><p>Entree: ${table.entree}</p><p>Drink: ${table.drink}</p>`;
 }
+
 document.getElementById('tableSpace').innerHTML = tableSetup;
