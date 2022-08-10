@@ -91,7 +91,7 @@ const menuRS = [
     }
 ]
 
-drinkMenuRS = [
+const drinkMenuRS = [
     {
         drinkID: 1,
         item: "Water",
@@ -129,12 +129,36 @@ let test = ""
 
 let numRS = 1
 
+// for (const parties of partyRS) {
+//     test = test + `<h4>Party ID: ${parties.partyID}</h4>
+//     <h4>Party Size: ${parties.partySize}</h4>
+//     <h4>Table Number: ${parties.tableID}</h4>`
+//     for (const orders of parties.order) {
+//         test = test + `<h4>Order ${numRS++}: ${orders.menuID}, ${orders.drinkID}</h4>`
+//     }
+
+// }
+
+function matchMenuID(num) {
+    for (const menus of menuRS) {
+        if (menus.menuID === num)
+            return menus.item
+    }
+}
+
+function matchDrinkID(num) {
+    for (const menus of drinkMenuRS) {
+        if (menus.drinkID === num)
+            return menus.item
+    }
+}
+
 for (const parties of partyRS) {
     test = test + `<h4>Party ID: ${parties.partyID}</h4>
     <h4>Party Size: ${parties.partySize}</h4>
     <h4>Table Number: ${parties.tableID}</h4>`
     for (const orders of parties.order) {
-        test = test + `<h4>Order ${numRS++}: ${orders.menuID}, ${orders.drinkID}</h4>`
+        test = test + `<h4>Order ${numRS++}: ${matchMenuID(orders.menuID)}, ${matchDrinkID(orders.drinkID)}</h4>`
     }
 
 }
@@ -143,9 +167,3 @@ for (const parties of partyRS) {
 
 document.getElementById("test1").innerHTML = test
 
-for (menu of menuRS) {
-    for (const parties of PartyRS) {
-    }
-}
-
-if (menu.menuID)

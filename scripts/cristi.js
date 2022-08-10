@@ -23,6 +23,6 @@ let tableSetup = '';
 for (const table of tablesCN) {
   tableSetup =
     tableSetup +
-    `<h4>table Id: ${table.tableId}</p><p>Party Size: ${table.partySize}</p><p>Entree: ${table.entree}</p><p>Drink: ${table.drink}</p>';
+    `<h4>table Id: ${table.tableId}</h4></p><p>Party Size: ${table.partySize}</p><p>Entree: ${table.entree}</p><p>Drink: ${table.drink}</p>`;
 }
 document.getElementById('tableSpace').innerHTML = tableSetup;

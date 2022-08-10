@@ -96,7 +96,7 @@ h1 {
   margin: 10% 2%;
 }
 
-.container > * {
+.container>* {
   flex: 1 100%;
 }
 
