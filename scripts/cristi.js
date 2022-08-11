@@ -24,12 +24,9 @@ let tableSetup = '';
 for (const table of tablesCN) {
   tableSetup =
     tableSetup +
-<<<<<<< Updated upstream
-    `<h4>table Id: ${table.tableId}</p><p>Party Size: ${table.partySize}</p><p>Entree: ${table.entree}</p><p>Drink: ${table.drink}</p>`;
-=======
+
     `<h4>table Id: ${table.tableId}</h4><p>Party Size: ${table.partySize}</p><p>Entree: ${table.entree}</p><p>Drink: ${table.drink}</p>`;
->>>>>>> Stashed changes
-}
+
 
 document.getElementById('tableSpace').innerHTML = tableSetup;
 
