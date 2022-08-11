@@ -1,18 +1,18 @@
-/*.container {
-} 
+/* .container {
+}  */
 
 #cristi {
+  padding: 20px;
 }
 
-#alex {
-}
+/* #alex {
+} */
 
-#taylor {
-}
+/* #taylor {
+} */
 
-#robert {
-}
-*/
+/* #robert {
+} */
 
 body {
   /*background-color: #96c9dc;
@@ -60,7 +60,7 @@ nav {
 }
 
 .title:after {
-  content: "";
+  content: '';
   position: absolute;
   bottom: -12px;
   right: -15px;
@@ -96,7 +96,7 @@ h1 {
   margin: 7% 2%;
 }
 
-.container>* {
+.container > * {
   flex: 1 100%;
 }
 
@@ -157,27 +157,22 @@ h1 {
   padding-left: 0.8vw;
   padding-top: 5px;
   margin-top: 0;
-
 }
-
 
 #orderRob h3 {
   padding-right: 1.5vw;
   font-size: 16px;
   padding-left: 1.6vw;
-
 }
 
 #orderRob h4 {
   margin-left: 5vw;
   font-size: 15px;
-
 }
 
 #orderRob li {
   margin-left: 5vw;
   font-size: 15px;
-
 }
 
 #orderRob h5 {
@@ -191,5 +186,4 @@ h1 {
   font-style: italic;
   padding-right: 0.6vw;
   color: #f5d491;
-
 }
