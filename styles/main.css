@@ -1,18 +1,18 @@
-/*.container {
-} 
+/* .container {
+}  */
 
 #cristi {
+  padding: 10px;
 }
 
-#alex {
-}
+/* #alex {
+} */
 
-#taylor {
-}
+/* #taylor {
+} */
 
-#robert {
-}
-*/
+/* #robert {
+} */
 
 body {
   /*background-color: #96c9dc;
@@ -60,7 +60,7 @@ nav {
 }
 
 .title:after {
-  content: "";
+  content: '';
   position: absolute;
   bottom: -12px;
   right: -15px;
@@ -96,7 +96,7 @@ h1 {
   margin: 10% 2%;
 }
 
-.container>* {
+.container > * {
   flex: 1 100%;
 }
 
