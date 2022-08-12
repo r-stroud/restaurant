@@ -1,27 +1,61 @@
+const waitersRS = [
+    {
+        employeeID: 1,
+        firstName: "Cristi",
+        lastName: "Neames"
+    },
+
+    {
+        employeeID: 2,
+        firstName: "Alex",
+        lastName: "Cueto"
+    },
+    {
+        employeeID: 3,
+        firstName: "Taylor",
+        lastName: "Evans"
+    },
+    {
+        employeeID: 4,
+        firstName: "Robert",
+        lastName: "Stroud"
+    },
+]
+
+
+
+for (staff of waitersRS) {
+    if (staff.employeeID === 4) {
+        document.getElementById("staffRob").innerHTML = `<h2><span>Employee ID:</span>${staff.employeeID}</h2><div><h3>${staff.firstName}</h3><h3>${staff.lastName}</h3></div>`
+    }
+}
+
+
+
 const partyRS = [
     {
         partyID: 1,
         partySize: 4,
-        tableID: 3,
+        tableID: 7,
         order: [
             {
-                menuID: 1,
-                drinkID: 3,
+                menuID: Math.floor(Math.random() * 6) + 1,
+                drinkID: Math.floor(Math.random() * 5) + 1,
                 partyrestrictionID: 1,
             },
             {
-                menuID: 4,
-                drinkID: 1,
+                menuID: Math.floor(Math.random() * 6) + 1,
+                drinkID: Math.floor(Math.random() * 5) + 1,
                 partyrestrictionID: 3,
             },
             {
-                menuID: 6,
-                drinkID: 5,
+                menuID: Math.floor(Math.random() * 6) + 1,
+                drinkID: Math.floor(Math.random() * 5) + 1,
                 partyrestrictionID: 1,
             },
             {
-                menuID: 5,
-                drinkID: 5,
+                menuID: Math.floor(Math.random() * 6) + 1,
+                drinkID: Math.floor(Math.random() * 5) + 1,
                 partyrestrictionID: 1,
             }
         ]
@@ -29,34 +63,59 @@ const partyRS = [
     {
         partyID: 2,
         partySize: 2,
-        tableID: 1,
+        tableID: 10,
         order: [
             {
-                menuID: 1,
-                drinkID: 3,
+                menuID: Math.floor(Math.random() * 6) + 1,
+                drinkID: Math.floor(Math.random() * 5) + 1,
                 partyrestrictionID: 1,
             },
             {
-                menuID: 4,
-                drinkID: 1,
+                menuID: Math.floor(Math.random() * 6) + 1,
+                drinkID: Math.floor(Math.random() * 5) + 1,
+                partyrestrictionID: 3,
+            }
+        ]
+    },
+    {
+        partyID: 3,
+        partySize: 6,
+        tableID: 9,
+        order: [
+            {
+                menuID: Math.floor(Math.random() * 6) + 1,
+                drinkID: Math.floor(Math.random() * 5) + 1,
+                partyrestrictionID: 1,
+            },
+            {
+                menuID: Math.floor(Math.random() * 6) + 1,
+                drinkID: Math.floor(Math.random() * 5) + 1,
                 partyrestrictionID: 3,
             },
             {
-                menuID: 6,
-                drinkID: 5,
-                partyrestrictionID: 1,
+                menuID: Math.floor(Math.random() * 6) + 1,
+                drinkID: Math.floor(Math.random() * 5) + 1,
+                partyrestrictionID: 3,
             },
             {
-                menuID: 5,
-                drinkID: 5,
-                partyrestrictionID: 1,
+                menuID: Math.floor(Math.random() * 6) + 1,
+                drinkID: Math.floor(Math.random() * 5) + 1,
+                partyrestrictionID: 3,
+            },
+            {
+                menuID: Math.floor(Math.random() * 6) + 1,
+                drinkID: Math.floor(Math.random() * 5) + 1,
+                partyrestrictionID: 3,
+            },
+            {
+                menuID: Math.floor(Math.random() * 6) + 1,
+                drinkID: Math.floor(Math.random() * 5) + 1,
+                partyrestrictionID: 3,
             }
         ]
     }
 ]
 
-
-// document.getElementById('taylorText').innerHTML = taylor();
 
 const menuRS = [
     {
@@ -125,19 +184,11 @@ const partyRestrictionRS = [
     { Id: 3, restriction: 'peanut-free' },
 ];
 
+
+
 let test = ""
 
 let numRS = 1
-
-// for (const parties of partyRS) {
-//     test = test + `<h4>Party ID: ${parties.partyID}</h4>
-//     <h4>Party Size: ${parties.partySize}</h4>
-//     <h4>Table Number: ${parties.tableID}</h4>`
-//     for (const orders of parties.order) {
-//         test = test + `<h4>Order ${numRS++}: ${orders.menuID}, ${orders.drinkID}</h4>`
-//     }
-
-// }
 
 function matchMenuID(num) {
     for (const menus of menuRS) {
@@ -153,17 +204,43 @@ function matchDrinkID(num) {
     }
 }
 
-for (const parties of partyRS) {
-    test = test + `<h4>Party ID: ${parties.partyID}</h4>
-    <h4>Party Size: ${parties.partySize}</h4>
-    <h4>Table Number: ${parties.tableID}</h4>`
-    for (const orders of parties.order) {
-        test = test + `<h4>Order ${numRS++}: ${matchMenuID(orders.menuID)}, ${matchDrinkID(orders.drinkID)}</h4>`
+function menuCost(num) {
+    for (const menusCost of menuRS) {
+        if (menusCost.menuID === num)
+            return menusCost.cost
     }
+}
 
+function drinkCost(num) {
+    for (const drinksCost of drinkMenuRS) {
+        if (drinksCost.drinkID === num)
+            return drinksCost.cost
+    }
+}
+
+let costMenu = 0
+
+let costDrinkMenu = 0
+
+for (const parties of partyRS) {
+    test = test + `<h2><span>Party ID: </span>${parties.partyID}</h2>
+    <div>
+    <h3><span>Party Size: </span>${parties.partySize}</h3>
+    <h3><span>Table Number: </span>${parties.tableID}</h3>
+    </div>`
+    for (const orders of parties.order) {
+        // test = test + `<h4><span>Order ${numRS++}:</span> ${matchMenuID(orders.menuID)} & ${matchDrinkID(orders.drinkID)}</h4>`
+        test = test + `<h4><span>Order ${numRS++}:</span></h4> <ul><li>${matchMenuID(orders.menuID)}</li><li>${matchDrinkID(orders.drinkID)}</li></ul>`
+
+        costMenu = costMenu + menuCost(orders.menuID)
+        costDrinkMenu = costDrinkMenu + drinkCost(orders.drinkID)
+    }
+    test = test + `<h5><span>Total Cost: </span>$${parseFloat(costMenu + costDrinkMenu).toFixed(2)}</h5>`
+    costMenu = 0
+    costDrinkMenu = 0
 }
 
 
 
-document.getElementById("test1").innerHTML = test
+document.getElementById("orderRob").innerHTML = test
 

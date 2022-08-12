@@ -1,27 +1,27 @@
 const tableTE = [
     { tableId: 1, numberOfSeats: 4, Booth: true },
 
-  { tableId: 2, numberOfSeats: 8, Booth: false },
+    { tableId: 2, numberOfSeats: 8, Booth: false },
 
-  { tableId: 3, numberOfSeats: 4, Booth: true },
+    { tableId: 3, numberOfSeats: 4, Booth: true },
 
-  { tableId: 4, numberOfSeats: 4, Booth: true },
+    { tableId: 4, numberOfSeats: 4, Booth: true },
 
-  { tableId: 5, numberOfSeats: 8, Booth: false },
+    { tableId: 5, numberOfSeats: 8, Booth: false },
 
-  { tableId: 6, numberOfSeats: 8, Booth: false },
+    { tableId: 6, numberOfSeats: 8, Booth: false },
 
-  { tableId: 7, numberOfSeats: 8, Booth: false },
+    { tableId: 7, numberOfSeats: 8, Booth: false },
 
-  { tableId: 8, numberOfSeats: 4, Booth: true },
+    { tableId: 8, numberOfSeats: 4, Booth: true },
 
-  { tableId: 9, numberOfSeats: 4, Booth: true },
+    { tableId: 9, numberOfSeats: 4, Booth: true },
 
-  { tableId: 10, numberOfSeats: 4, Booth: true },
+    { tableId: 10, numberOfSeats: 4, Booth: true },
 
-  { tableId: 11, numberOfSeats: 4, Booth: true },
+    { tableId: 11, numberOfSeats: 4, Booth: true },
 
-  { tableId: 12, numberOfSeats: 4, Booth: true },
+    { tableId: 12, numberOfSeats: 4, Booth: true },
 ];
 
 const partyTE = [
@@ -56,12 +56,10 @@ const partyTE = [
 
 ];
 
-const partyRestrictionTE = [
-    { Id: 1, restriction: 'none' },
-    { Id: 2, restriction: 'gluten-free' },
-    { Id: 3, restriction: 'peanut-free' },
 
-]
+ 
+//do not accept
+
 
 const menuTE = [];
 
@@ -77,7 +75,7 @@ document.getElementById('taylorText').innerHTML = taylor();
 
 
 function taylor() {
-  return waiter.toString();
+    return waiter.toString();
 }
 
 taylor('I am');
