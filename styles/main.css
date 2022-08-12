@@ -15,18 +15,18 @@
 } */
 
 body {
-  /*background-color: #96c9dc;
-    background-color: #61a0af;*/
-  background-color: #f06c9b;
+  /* background-color: #96c9dc; */
+  background-color: #61a0af;
+  /* background-color: #f06c9b; */
   /*background-color: #f9b9b7;
     background-color: #f5d491;*/
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
-  border: black 3px solid;
+  border: #96c9dc 3px solid;
 }
 
-nav ul {
+/* nav ul {
   list-style: none;
   display: flex;
   justify-content: space-around;
@@ -41,7 +41,24 @@ nav ul {
   padding: 0px 5px 10px 5px;
   font-size: 18px;
   margin: 0px;
-  /* added margin 0 to fix the nav par position */
+} */
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  border-top: 5px solid #96c9dc;
+  border-bottom: 6px solid #96c9dc;
+  border-right: 3px solid #96c9dc;
+  border-left: 3px solid #96c9dc;
+  padding-bottom: 5px;
+  background-color: #f5d491;
+  padding: 0px 5px 10px 5px;
+  font-size: 18px;
+  margin: 0px;
+  box-shadow: 1px 5px #f9b9b7;
 }
 
 nav {
@@ -59,7 +76,7 @@ nav {
   position: relative;
 }
 
-.title:after {
+/* .title:after {
   content: '';
   position: absolute;
   bottom: -12px;
@@ -67,10 +84,20 @@ nav {
   height: 100px;
   width: 1px;
   background-color: black;
+} */
+
+.title:after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  right: -15px;
+  height: 51px;
+  width: 4px;
+  background-color: #f9b9b7;
 }
 
 nav img {
-  border: black 1px solid;
+  border: #f9b9b7 3px solid;
   border-radius: 100%;
   width: 25px;
   margin-right: 8px;
@@ -93,10 +120,10 @@ h1 {
   display: flex;
   /* flex-wrap: wrap;
   justify-content: space-around; */
-  margin: 7% 2%;
+  margin: 80px 2% 20px;
 }
 
-.container > * {
+.container>* {
   flex: 1 100%;
 }
 
@@ -106,7 +133,7 @@ h1 {
   /* margin: auto; */
   border-radius: 10px;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.6);
-  background-color: lightseagreen;
+  background-color: #f5d491;
   margin-right: 10px;
 }
 
@@ -115,7 +142,7 @@ h1 {
 }
 
 #staffRob {
-  border: solid black 2px;
+  border: solid #96c9dc 3px;
   margin-bottom: 0;
   display: flex;
   align-items: center;
@@ -140,7 +167,7 @@ h1 {
 }
 
 #orderRob {
-  border: solid black 2px;
+  border: solid #96c9dc 3px;
   border-top: none;
   margin-top: 0;
 }
@@ -153,7 +180,7 @@ h1 {
   font-size: 17px;
   padding-bottom: 0;
   margin-bottom: 0;
-  border-top: solid black 2px;
+  border-top: solid #f9b9b7 3px;
   padding-left: 0.8vw;
   padding-top: 5px;
   margin-top: 0;
@@ -185,5 +212,5 @@ h1 {
 #orderRob span {
   font-style: italic;
   padding-right: 0.6vw;
-  color: #f5d491;
+  color: #61a0af;
 }
