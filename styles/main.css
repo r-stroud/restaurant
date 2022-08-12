@@ -187,3 +187,8 @@ h1 {
   padding-right: 0.6vw;
   color: #f5d491;
 }
+
+.tayTables {
+    padding: 10px;
+    border-bottom: solid black 2px;
+}
