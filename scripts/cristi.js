@@ -20,6 +20,10 @@ document.getElementById('waiter').innerHTML = htmlString;
 // Loop through table
 let tableSetup = '';
 
-//do not accept
+for (const table of tablesCN) {
+  tableSetup =
+    tableSetup +
+    `<h4>Table Id: ${table.tableId}</h4><p>Party Size: ${table.partySize}</p><p>Entree: ${table.entree}</p><p>Drink: ${table.drink}</p> <p>Order Status: ${orderStatus[0]}</p>`;
+}
 
 document.getElementById('tableSpace').innerHTML = tableSetup;

@@ -29,7 +29,7 @@ const tablesAlex = [
         `<h2>Table: ${table.tableId}</h2> 
         <p>Party Size: ${table.partySize}</p>
         <p>Food: ${table.entree}</p>
-        <p>Drinks: ${table.drink}</p>`
+        <p>Drinks: ${table.drink}</p>
         <h4>Total Price: ${table.howMuch}</h4>`;
   }
 document.getElementById('waiterName').innerHTML = tableSetup1;  
