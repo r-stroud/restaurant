@@ -1,34 +1,23 @@
-//this is to label the waiter name//
-// const waiterAlex = [
-//     { id: 1, name: 'Taylor' },
-//     { id: 2, name: 'Alex' },
-//     { id: 3, name: 'Robert' },
-//     { id: 4, name: 'Cristi' },
-//   ];
-  
-//   const alexString = `<h1>${waiterAlex[1].name}</h1>`;
-// document.getElementById('waiter2').innerHTML = alexString;
-
-
-
-
-
 const tablesAlex = [
     { tableId: 3, 
       partySize: 4, 
-      entree: 'Chicken', 
-      drink: 'water' },
-
+      entree: 'Chicken, Pizza, Tacos', 
+      drink: 'water, 2 sodas, 1 wine', 
+      howMuch: '$25.43'
+    },
+      
     { tableId: 4, 
       partySize: 8, 
-      entree: 'Pizza', 
-      drink: 'beer' 
+      entree: '2 Pizzas, 2 Tacos, Pasta, 3 Burritos', 
+      drink: '4 beers, 1 water, 1 wine, 2 coffees', 
+      howMuch: '$47.99'
     },
 
     { tableId: 5, 
       partySize: 6, 
-      entree: 'Tacos', 
-      drink: 'coke' 
+      entree: '3 Tacos, 3 Pizzas', 
+      drink: '6 cokes', 
+      howMuch: '$30.18'
     },
   ];
   
@@ -37,8 +26,11 @@ const tablesAlex = [
   for (const table of tablesAlex) {
     tableSetup1 = 
         tableSetup1 + 
-        `<h4>Table: ${table.tableId}</h4> 
-        <p>Party Size: ${table.partySize} Food: ${table.entree} Drinks: ${table.drink}</p>`;
+        `<h2>Table: ${table.tableId}</h2> 
+        <p>Party Size: ${table.partySize}</p>
+        <p>Food: ${table.entree}</p>
+        <p>Drinks: ${table.drink}</p>`
+        <h4>Total Price: ${table.howMuch}</h4>`;
   }
 document.getElementById('waiterName').innerHTML = tableSetup1;  
 
@@ -47,55 +39,57 @@ document.getElementById('waiterName').innerHTML = tableSetup1;
 
 // this is practice work
 
-const foodMenuItems = [
-  { menuID: 1,
-    item: "Pizza",
-    cost: 10.99
-  },
+// const foodMenuItems = [
+//   { person: 1,
+//     item: "Pizza",
+//     cost: 10.99
+//   },
 
-  {menuID: 2,
-   item: "Tacos",
-   cost: 4.99
-  },
+//   {person: 2,
+//    item: "Tacos",
+//    cost: 4.99
+//   },
 
-  {menuID: 3,
-   item: "Pasta",
-   cost: 7.99
-  },
+//   {person: 3,
+//    item: "Pasta",
+//    cost: 7.99
+//   },
 
-  {menuID: 4,
-    item: "Chicken Nugetts",
-    cost: 5.99
-  },
+//   {person: 4,
+//     item: "Chicken Nugetts",
+//     cost: 5.99
+//   },
 
-  {menuID: 5,
-   item: "Burger",
-   cost: 8.99
-  },
+//   {person: 5,
+//    item: "Burger",
+//    cost: 8.99
+//   },
 
-  {menuID: 6,
-   item: "Wings",
-   cost: 19.99
-  }
-]
+//   {person: 6,
+//    item: "Wings",
+//    cost: 19.99
+//   }
+// ]
 
-//****this displays only on the console and not the website
-// console.log(foodMenuItems[0])
+// //****this displays only on the console and not the website
+// // console.log(foodMenuItems[0])
 
 
+// for(const food of foodMenuItems) {
+//   console.log(food.item)
+// }
 
-for(const food of foodMenuItems) {
-  console.log(food.item)
-}
+// let displayOrder = "";
 
-let displayFood = "";
+// for (const food of foodMenuItems) {
+//   displayOrder=displayOrder + `<h2>${food.item}</h4><h4>${food.cost}</h4>`
+// }
 
-for (const food of foodMenuItems) {
-  displayFood=displayFood + `<h4>${food.item}</h4>`
-  document.getElementById('here').innerHTML = displayFood; 
-}
 
-for (const price of foodMenuItems) {
-displayFood=displayFood + `${price.cost}`
-document.getElementById(`here`).innerHTML = displayFood;
-}
+  
+//   document.getElementById('here').innerHTML = displayOrder; 
+
+
+// // // this is as referrence for price loop
+
+// document.getElementById(`here`).innerHTML = displayFood;
