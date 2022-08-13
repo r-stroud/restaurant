@@ -51,15 +51,15 @@ const partyTE = [
             partyRestrictionId: 1,
             numberOfsplitChecks: 1,
         },
-    },
+
+    }
+
 ];
 
 
-const partyRestrictionTE = [
-    { Id: 1, restriction: 'none' },
-    { Id: 2, restriction: 'gluten-free' },
-    { Id: 3, restriction: 'peanut-free' },
-];
+ 
+//do not accept
+
 
 const menuTE = [];
 
