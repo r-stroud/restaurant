@@ -5,6 +5,12 @@
   padding: 20px;
 }
 
+.flex-item {
+  transition: all 0.2s ease-in-out;
+}
+.flex-item:hover {
+  transform: scale(1.1);
+}
 /* #alex {
 } */
 
@@ -123,7 +129,7 @@ h1 {
   margin: 80px 2% 20px;
 }
 
-.container>* {
+.container > * {
   flex: 1 100%;
 }
 
