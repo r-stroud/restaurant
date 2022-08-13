@@ -1,4 +1,4 @@
-const tableTE = [
+/*const tableTE = [
     { tableId: 1, numberOfSeats: 4, Booth: true },
 
     { tableId: 2, numberOfSeats: 8, Booth: false },
@@ -22,45 +22,11 @@ const tableTE = [
     { tableId: 11, numberOfSeats: 4, Booth: true },
 
     { tableId: 12, numberOfSeats: 4, Booth: true },
-];
+];*/
 
 
-const tayParties = [ {
-    partyID: 1,
-    partySize: 4,
-    tableID: 3,
-    order: [
-        {
-            menuID: 1,
-            drinkID: 3,
-            partyrestrictionID: 1,
-        }, 
-    ],
-    partyID: 2,
-    partySize: 5,
-    tableID: 1,
-    order: [
-        {
-            menuID: 2,
-            drinkID: 2,
-            partyrestrictionID: 2,
-        },
-    ], 
-    partyID: 3,
-    partySize: 6,
-    tableID: 2,
-    order: [
-        {
-            menuID: 3,
-            drinkID: 1,
-            partyrestrictionID: 3,
-        },
-    ]
-}
 
-]
-
-const menuTE = [
+/*const menuTE = [
     {
         menuID: 1,
         item: "Everything Pizza",
@@ -91,9 +57,9 @@ const menuTE = [
         item: "A Little Bit of Everything",
         cost: 19.99
     }
-]
+]*/
 
-const drinkMenuTE = [
+/*const drinkMenuTE = [
     {
         drinkID: 1,
         item: "Water",
@@ -119,30 +85,70 @@ const drinkMenuTE = [
         item: "Beer",
         cost: 3.99
     },
-]
+]*/
 
-const partyRestrictionTE = [
+/*const partyRestrictionTE = [
     { Id: 1, restriction: 'none' },
     { Id: 2, restriction: 'gluten-free' },
     { Id: 3, restriction: 'peanut-free' },
-];
+];*/
 
 
-let taylorTable = '';
-/*let taylorTableTwo = '';
-let taylorTableThree = '';*/
-
-for (const tabletay of tayParties) {
-    for (const arrayAcc of tabletay.order) {
-    taylorTable = taylorTable + `<h3> Menu Item: ${arrayAcc.menuID}</h3><h3> Party Restrictions: ${arrayAcc.partyrestrictionID}</h3>`
-
-    }
-    
+const tayParties = [ 
+    {
+    partyID: 1,
+    partySize: 4,
+    tableID: 3,
+    order: [
+        {
+            OrderNumber: 5,
+            FoodItem: "Spaghetti",
+            DrinkItem: 'Dr. Pepper',
+            partyrestriction: "Gluten",
+            Price: 19.00,
+        }, 
+    ],
+}, 
+{
+    partyID: 2,
+    partySize: 5,
+    tableID: 1,
+    order: [
+        {   
+            OrderNumber: 9,
+            FoodItem: "Everything Burger",
+            DrinkItem: "Sweet Tea",
+            partyrestriction: "Lactose",
+            Price: 18.00,
+        },
+    ]
+}, 
+{
+    partyID: 3,
+    partySize: 6,
+    tableID: 2,
+    order: [
+        {   
+            OrderNumber: 12,
+            FoodItem: "Everything Pizza",
+            DrinkItem: "Lemonade",
+            partyrestriction: "none",
+            Price: 23.00,
+        },
+    ]
 }
 
+]
 
-document.getElementById('table1').innerHTML = taylorTable;
-/*document.getElementById('table2').innerHTML = taylorTableTwo;
-document.getElementById('table3').innerHTML = taylorTableThree;*/
+let tableNum = 0;
+let taylor = '';
 
-//table, party size, food item, drink item
+
+for (const tabletay of tayParties) {
+    taylor = taylor + `<h1> Table Number ${tabletay.tableID}</h1>`
+    for (const arrayAcc of tabletay.order) {
+    taylor = taylor + `<h2> Food Item: ${arrayAcc.OrderNumber}</h2><h2> Food Item: ${arrayAcc.FoodItem}</h2><h2> Food Item: ${arrayAcc.DrinkItem}</h2><h2> Party Restrictions: ${arrayAcc.partyrestriction}</h2><h2> Price $${arrayAcc.Price}</h2>`
+    }   
+}
+
+document.getElementById('table1').innerHTML = taylor;

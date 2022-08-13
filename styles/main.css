@@ -15,11 +15,12 @@
 } */
 
 body {
-  /* background-color: #96c9dc; */
+  /*background-color: #96c9dc;*/ 
   background-color: #61a0af;
-  /* background-color: #f06c9b; */
-  /*background-color: #f9b9b7;
-    background-color: #f5d491;*/
+  /*background-color: #f06c9b; 
+  background-color: #f9b9b7;
+  background-color: #f5d491;*/
+  
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
@@ -213,4 +214,23 @@ h1 {
   font-style: italic;
   padding-right: 0.6vw;
   color: #61a0af;
+}
+
+#table1 h1 {
+   border-bottom: #f06c9b solid;
+   color: #61a0af;
+}
+
+#table1 h2 {
+  border-bottom: #f06c9b solid;
+  color: black;
+}
+
+#taylorTitle {
+  color: #61a0af;
+  border-bottom: #f06c9b solid;
+}
+
+#table1 {
+  padding: 20px;
 }
