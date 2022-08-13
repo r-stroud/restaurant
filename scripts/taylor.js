@@ -28,6 +28,7 @@
 
 /*const menuTE = [
     {
+<<<<<<< HEAD
         menuID: 1,
         item: "Everything Pizza",
         cost: 15.99
@@ -58,6 +59,7 @@
         cost: 19.99
     }
 ]*/
+
 
 /*const drinkMenuTE = [
     {
@@ -92,6 +94,18 @@
     { Id: 2, restriction: 'gluten-free' },
     { Id: 3, restriction: 'peanut-free' },
 ];*/
+ 
+//do not accept
+
+
+const menuTE = [];
+
+const waiterTE = [
+    { id: 1, name: 'Taylor' },
+    { id: 2, name: 'Alex' },
+    { id: 3, name: 'Robert' },
+    { id: 4, name: 'Cristi' },
+];
 
 
 const tayParties = [ 
