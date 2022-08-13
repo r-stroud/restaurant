@@ -5,12 +5,8 @@
   padding: 20px;
 }
 
-.flex-item {
-  transition: all 0.2s ease-in-out;
-}
-.flex-item:hover {
-  transform: scale(1.1);
-}
+
+
 /* #alex {
 } */
 
@@ -21,17 +17,18 @@
 } */
 
 body {
-  /*background-color: #96c9dc;*/ 
+  /* background-color: #96c9dc; */
   background-color: #61a0af;
-  /*background-color: #f06c9b; 
-  background-color: #f9b9b7;
-  background-color: #f5d491;*/
-  
+  /* background-color: #f06c9b; */
+  /*background-color: #f9b9b7;
+    background-color: #f5d491;*/
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
   border: #96c9dc 3px solid;
+  font-family: "Cinzel", serif;
 }
+
 
 /* nav ul {
   list-style: none;
@@ -74,13 +71,18 @@ nav {
   height: 7%;
   top: 0px;
   left: 0px;
+  z-index: 1;
 }
 
 .title {
   align-self: flex-end;
   margin-left: 0%;
-  padding-right: 2%;
+  padding-right: 0.5%;
+  padding-left: 0.5%;
   position: relative;
+  font-size: 20px;
+  word-spacing: 3px;
+
 }
 
 /* .title:after {
@@ -98,7 +100,7 @@ nav {
   position: absolute;
   bottom: -10px;
   right: -15px;
-  height: 51px;
+  height: 53px;
   width: 4px;
   background-color: #f9b9b7;
 }
@@ -130,18 +132,41 @@ h1 {
   margin: 80px 2% 20px;
 }
 
-.container > * {
+.container>* {
   flex: 1 100%;
+
+}
+
+.flex-item {
+  transition: all 0.2s ease-in-out;
+}
+
+.flex-item:hover {
+  transform: scale(1.01);
+  animation: color-change 2s infinite;
+
+}
+
+@keyframes color-change {
+  0% {
+    border-color: #96c9dc
+  }
+
+  100% {
+    border-color: #f06c9b
+  }
 }
 
 .flex-item {
   width: 100px;
-  /* height: 100px; */
+  height: max-content;
   /* margin: auto; */
   border-radius: 10px;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.6);
   background-color: #f5d491;
   margin-right: 10px;
+  border: solid #96c9dc 3px;
+  z-index: 0;
 }
 
 .flex-item p {
@@ -149,11 +174,12 @@ h1 {
 }
 
 #staffRob {
-  border: solid #96c9dc 3px;
+  border-bottom: solid #96c9dc 3px;
   margin-bottom: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  color: #61a0af;
 }
 
 #staffRob div {
@@ -174,7 +200,7 @@ h1 {
 }
 
 #orderRob {
-  border: solid #96c9dc 3px;
+  /* border: solid #96c9dc 3px; */
   border-top: none;
   margin-top: 0;
 }
@@ -223,8 +249,8 @@ h1 {
 }
 
 #table1 h1 {
-   border-bottom: #f06c9b solid;
-   color: #61a0af;
+  border-bottom: #f06c9b solid;
+  color: #61a0af;
 }
 
 #table1 h2 {
