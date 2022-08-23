@@ -1,35 +1,29 @@
 import { getMenu, getParty, getWaiters } from './main.js';
 
-console.log(getMenu());
-console.log(getParty());
-console.log(getWaiters());
-
-// const tablesCN = [
-//   { tableId: 1, partySize: 4, entree: 'Chicken', drink: 'water' },
-//   { tableId: 2, partySize: 8, entree: 'Pizza', drink: 'beer' },
-//   { tableId: 3, partySize: 6, entree: 'Tacos', drink: 'coke' },
-// ];
-
-// const waiterCN = [
-//   { id: 1, name: 'Taylor' },
-//   { id: 2, name: 'Alex' },
-//   { id: 3, name: 'Robert' },
-//   { id: 4, name: 'Cristi' },
-// ];
-
-// const orderStatus = ['Order Complete', 'Order in Progress'];
-
 // // Display waiter name
-// const htmlString = `<h1>${waiterCN[3].name}</h1>`;
-// document.getElementById('waiter').innerHTML = htmlString;
+const waiterCN = () => {
+  const waiterCristi = getWaiters();
+  let htmlWaiter = '';
+  for (const staff of waiterCristi) {
+    if (staff.employeeID === 1) {
+      htmlWaiter =
+        htmlWaiter +
+        `<h3>Employee Id: ${staff.employeeID} - ${staff.firstName} ${staff.lastName}</h3>`;
+    }
+    document.getElementById('staffId').innerHTML = htmlWaiter;
+  }
+};
 
-// // Loop through table
-// let tableSetup = '';
+waiterCN();
 
-// for (const table of tablesCN) {
-//   tableSetup =
-//     tableSetup +
-//     `<h4>Table Id: ${table.tableId}</h4><p>Party Size: ${table.partySize}</p><p>Entree: ${table.entree}</p><p>Drink: ${table.drink}</p> <p>Order Status: ${orderStatus[0]}</p>`;
-// }
+// // Loop through Party table
+let tableSetup = '';
+const partyCristi = getParty();
+for (const par of partyCristi) {
+  tableSetup =
+    tableSetup +
+    `<h4>Table ID: ${par.tableId}</h4><p>Party Size: ${par.partySize}</p>`;
+}
+document.getElementById('tableSpace').innerHTML = tableSetup;
 
-// document.getElementById('tableSpace').innerHTML = tableSetup;
+`<p>Entree: ${table.entree}</p><p>Drink: ${table.drink}</p> <p>Order Status: ${orderStatus[0]}</p>`;

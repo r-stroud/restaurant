@@ -106,11 +106,11 @@ export const getMenu = () => {
 };
 
 export const getParty = () => {
-  const copyOfParty = menu.map((item) => ({ ...item }));
+  const copyOfParty = party.map((item) => ({ ...item }));
   return copyOfParty;
 };
 
 export const getWaiters = () => {
-  const copyOfWaiters = menu.map((item) => ({ ...item }));
+  const copyOfWaiters = waiters.map((item) => ({ ...item }));
   return copyOfWaiters;
 };
