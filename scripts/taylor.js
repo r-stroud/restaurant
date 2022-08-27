@@ -149,9 +149,9 @@
 
 // ]
 
-import {getMenu, menu, waiters} from './main.js';
-import {getParty} from './main.js';
-import {getWaiters} from './main.js';
+import { getMenu, menu, waiters } from './main.js';
+import { getParty } from './main.js';
+import { getWaiters } from './main.js';
 
 console.log(getMenu());
 console.log(getParty());
@@ -160,7 +160,7 @@ console.log(getWaiters());
 // import function complete
 
 const pushIntoHtml = () => {
-    
+
     //getting the data!!!!!!!!!!!!!!!!!!!!!!
 
     // get all the parties
@@ -195,22 +195,28 @@ const pushIntoHtml = () => {
     }
     // setting an empty array to push the 
     let myPartyTickets = [];
-    
+
     for (const party of myParties) {
-        
+
         // randomizes the id for food itmes
         const partyFoodItemId = Math.round(Math.random() * (7 - 0) + 0);
+
+        // new partyFoodItemID =
+
         // randomizes the id for drink items
-        const partyDrinkItemId = Math.round(Math.random() * (11 - 8)+  8);
+        const partyDrinkItemId = Math.round(Math.random() * (11 - 8) + 8);
+
         // modifies the empty partyinfo variable to include string interpolation and the party variable that finds select parties from the get party function
         partyInfo = `<h2>PartyID ${party.partyId}</h2><h2> TableID ${party.tableId}</h2><h2>Party Size ${party.partySize} </h2><h2>Party Restrictions ${party.partyRestriction} </h2>`;
+
         // modifies the menuinfo variable to pull in the object from the getmenus and used the partyfood itemID to 
         menuInfo = `<h2>Menu Items</h2><div>Item: ${menus[partyFoodItemId].menuItem}</div><div>Cost: ${menus[partyFoodItemId].cost}</div><div>Item: ${menus[partyDrinkItemId].menuItem}</div><div>Cost: ${menus[partyDrinkItemId].cost}</div>`;
+
         // modifies the waiter info variable with the waitertaylor find funciton to push our targeted data into the string interpolation 
         waiterInfo = `<h2>First Name ${waiterTaylor.firstName}</h2><h2>Last Name ${waiterTaylor.lastName}</h2>`;
         //condences the looped data into one variable and pushes it into the myPartyTickets Array
-        
-        
+
+
         const thisTicket = `<div>${partyInfo}</div><div>${menuInfo}</div><div>${waiterInfo}</div>`;
         myPartyTickets.push(thisTicket);
     }
@@ -220,4 +226,4 @@ const pushIntoHtml = () => {
 // sets the value equal to the value of the returned funcion
 const pushIntoHtmlValue = pushIntoHtml();
 // pushes everything into the html
-document.getElementById('table1').innerHTML = pushIntoHtmlValue.join('<hr />');
+document.getElementById('table1').innerHTML = pushIntoHtmlValue;

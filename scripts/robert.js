@@ -1,244 +1,82 @@
-// const waitersRS = [
-//     {
-//         employeeID: 1,
-//         firstName: "Cristi",
-//         lastName: "Neames"
-//     },
+import { getMenu, getParty, getWaiters } from './main.js';
 
-//     {
-//         employeeID: 2,
-//         firstName: "Alex",
-//         lastName: "Cueto"
-//     },
-//     {
-//         employeeID: 3,
-//         firstName: "Taylor",
-//         lastName: "Evans"
-//     },
-//     {
-//         employeeID: 4,
-//         firstName: "Robert",
-//         lastName: "Stroud"
-//     },
-// ]
+console.log(getMenu())
+console.log(getParty())
+console.log(getWaiters())
 
-for (staff of waitersRS) {
-  if (staff.employeeID === 4) {
-    document.getElementById(
-      'staffRob'
-    ).innerHTML = `<h2><span>Employee ID:</span>${staff.employeeID}</h2><div><h3>${staff.firstName}</h3><h3>${staff.lastName}</h3></div>`;
-  }
+
+
+const pushIntoHtml = () => {
+
+    // get all the parties
+    const parties = getParty();
+
+    // get all the menu items
+    const menus = getMenu();
+
+    // get all the waiters
+    const waiters = getWaiters();
+
+    // get the specificy waiter we are looking for by the waiter employee id
+    const waiterRobert = waiters.find((waiter) => waiter.employeeID === 4);
+
+
+    // waiter = object in the array
+
+    // declare the list of the parties that we are working with
+    const PARTY_IDS = [1, 8, 9];
+
+    // create a variable to hold the html elements with the party info
+    let partyInfo = "";
+    // create a variable to hold the html elements with the menu item info
+    let menuInfo = "";
+    // create a variable to hold the html elements with the waiter info
+    let waiterInfo = "";
+    // creates an empty array to hold our targeted party objects
+    const myParties = [];
+
+    for (const partyId of PARTY_IDS) {
+        // defining the variable party to hold the party that we are looking for   
+        let party;
+        //setting the value of parties equal to a party where the party ID is equal to a party id in our list
+        party = parties.find((xparty) => xparty.partyId === partyId);
+        myParties.push(party);
+    }
+
+
+    let myPartyTickets = [];
+
+    for (const newParty of myParties) {
+
+        // randomizes the id for food itmes
+        const partyFoodItemId = Math.round(Math.random() * (7 - 0) + 0);
+        // random num 0-1 *(7-0)+0
+        // rounded
+        // .round = 0.2 = 0
+        // .random = random number between 0 - 1
+
+        // GOOGLE!!!!
+
+        // randomizes the id for drink items
+        const partyDrinkItemId = Math.round(Math.random() * (11 - 8) + 8);
+
+        partyInfo = `<h2>PartyID ${newParty.partyId}</h2><h2> TableID ${newParty.tableId}</h2><h2>Party Size ${newParty.partySize} </h2><h2>Party Restrictions ${newParty.partyRestriction} </h2>`;
+
+        menuInfo = `<h2>Menu Items</h2><div>Item: ${menus[partyFoodItemId].menuItem}</div><div>Cost: ${menus[partyFoodItemId].cost}</div><div>Item: ${menus[partyDrinkItemId].menuItem}</div><div>Cost: ${menus[partyDrinkItemId].cost}</div>`;
+        // modifies the waiter info variable with the waitertaylor find funciton to push our targeted data into the string interpolation 
+
+        waiterInfo = `<h2>First Name ${waiterRobert.firstName}</h2><h2>Last Name ${waiterRobert.lastName}</h2>`;
+        //condences the looped data into one variable and pushes it into the myPartyTickets Array
+
+        const thisTicket = `<div>${partyInfo}</div><div>${menuInfo}</div><div>${waiterInfo}</div>`;
+        myPartyTickets.push(thisTicket);
+
+
+    }
+    return myPartyTickets;
+
 }
 
-// const partyRS = [
-//     {
-//         partyID: 1,
-//         partySize: 4,
-//         tableID: 7,
-//         order: [
-//             {
-//                 menuID: Math.floor(Math.random() * 6) + 1,
-//                 drinkID: Math.floor(Math.random() * 5) + 1,
-//                 partyrestrictionID: 1,
-//             },
-//             {
-//                 menuID: Math.floor(Math.random() * 6) + 1,
-//                 drinkID: Math.floor(Math.random() * 5) + 1,
-//                 partyrestrictionID: 3,
-//             },
-//             {
-//                 menuID: Math.floor(Math.random() * 6) + 1,
-//                 drinkID: Math.floor(Math.random() * 5) + 1,
-//                 partyrestrictionID: 1,
-//             },
-//             {
-//                 menuID: Math.floor(Math.random() * 6) + 1,
-//                 drinkID: Math.floor(Math.random() * 5) + 1,
-//                 partyrestrictionID: 1,
-//             }
-//         ]
-//     },
-//     {
-//         partyID: 2,
-//         partySize: 2,
-//         tableID: 10,
-//         order: [
-//             {
-//                 menuID: Math.floor(Math.random() * 6) + 1,
-//                 drinkID: Math.floor(Math.random() * 5) + 1,
-//                 partyrestrictionID: 1,
-//             },
-//             {
-//                 menuID: Math.floor(Math.random() * 6) + 1,
-//                 drinkID: Math.floor(Math.random() * 5) + 1,
-//                 partyrestrictionID: 3,
-//             }
-//         ]
-//     },
-//     {
-//         partyID: 3,
-//         partySize: 6,
-//         tableID: 9,
-//         order: [
-//             {
-//                 menuID: Math.floor(Math.random() * 6) + 1,
-//                 drinkID: Math.floor(Math.random() * 5) + 1,
-//                 partyrestrictionID: 1,
-//             },
-//             {
-//                 menuID: Math.floor(Math.random() * 6) + 1,
-//                 drinkID: Math.floor(Math.random() * 5) + 1,
-//                 partyrestrictionID: 3,
-//             },
-//             {
-//                 menuID: Math.floor(Math.random() * 6) + 1,
-//                 drinkID: Math.floor(Math.random() * 5) + 1,
-//                 partyrestrictionID: 3,
-//             },
-//             {
-//                 menuID: Math.floor(Math.random() * 6) + 1,
-//                 drinkID: Math.floor(Math.random() * 5) + 1,
-//                 partyrestrictionID: 3,
-//             },
-//             {
-//                 menuID: Math.floor(Math.random() * 6) + 1,
-//                 drinkID: Math.floor(Math.random() * 5) + 1,
-//                 partyrestrictionID: 3,
-//             },
-//             {
-//                 menuID: Math.floor(Math.random() * 6) + 1,
-//                 drinkID: Math.floor(Math.random() * 5) + 1,
-//                 partyrestrictionID: 3,
-//             }
-//         ]
-//     }
-// ]
+const pushIntoHtmlValue = pushIntoHtml();
 
-// const menuRS = [
-//     {
-//         menuID: 1,
-//         item: "Everything Pizza",
-//         cost: 15.99
-//     },
-//     {
-//         menuID: 2,
-//         item: "Everything Burger",
-//         cost: 6.99
-//     },
-//     {
-//         menuID: 3,
-//         item: "Everything Quesadilla",
-//         cost: 4.99
-//     },
-//     {
-//         menuID: 4,
-//         item: "Everything Sandwich",
-//         cost: 5.99
-//     },
-//     {
-//         menuID: 5,
-//         item: "Everything Spaghetti",
-//         cost: 8.99
-//     },
-//     {
-//         menuID: 6,
-//         item: "A Little Bit of Everything",
-//         cost: 19.99
-//     }
-// ]
-
-// const drinkMenuRS = [
-//     {
-//         drinkID: 1,
-//         item: "Water",
-//         cost: 0.00
-//     },
-//     {
-//         drinkID: 2,
-//         item: "Coke",
-//         cost: 1.99
-//     },
-//     {
-//         drinkID: 3,
-//         item: "Lemonade",
-//         cost: 1.99
-//     },
-//     {
-//         drinkID: 4,
-//         item: "Tea",
-//         cost: 1.99
-//     },
-//     {
-//         drinkID: 5,
-//         item: "Beer",
-//         cost: 3.99
-//     },
-// ]
-
-// const partyRestrictionRS = [
-//     { Id: 1, restriction: 'none' },
-//     { Id: 2, restriction: 'gluten-free' },
-//     { Id: 3, restriction: 'peanut-free' },
-// ];
-
-let test = '';
-
-let numRS = 1;
-
-function matchMenuID(num) {
-  for (const menus of menuRS) {
-    if (menus.menuID === num) return menus.item;
-  }
-}
-
-function matchDrinkID(num) {
-  for (const menus of drinkMenuRS) {
-    if (menus.drinkID === num) return menus.item;
-  }
-}
-
-function menuCost(num) {
-  for (const menusCost of menuRS) {
-    if (menusCost.menuID === num) return menusCost.cost;
-  }
-}
-
-function drinkCost(num) {
-  for (const drinksCost of drinkMenuRS) {
-    if (drinksCost.drinkID === num) return drinksCost.cost;
-  }
-}
-
-let costMenu = 0;
-
-let costDrinkMenu = 0;
-
-for (const parties of partyRS) {
-  test =
-    test +
-    `<h2><span>Party ID: </span>${parties.partyID}</h2>
-    <div>
-    <h3><span>Party Size: </span>${parties.partySize}</h3>
-    <h3><span>Table Number: </span>${parties.tableID}</h3>
-    </div>`;
-  for (const orders of parties.order) {
-    // test = test + `<h4><span>Order ${numRS++}:</span> ${matchMenuID(orders.menuID)} & ${matchDrinkID(orders.drinkID)}</h4>`
-    test =
-      test +
-      `<h4><span>Order ${numRS++}:</span></h4> <ul><li>${matchMenuID(
-        orders.menuID
-      )}</li><li>${matchDrinkID(orders.drinkID)}</li></ul>`;
-
-    costMenu = costMenu + menuCost(orders.menuID);
-    costDrinkMenu = costDrinkMenu + drinkCost(orders.drinkID);
-  }
-  test =
-    test +
-    `<h5><span>Total Cost: </span>$${parseFloat(
-      costMenu + costDrinkMenu
-    ).toFixed(2)}</h5>`;
-  costMenu = 0;
-  costDrinkMenu = 0;
-}
-
-document.getElementById('orderRob').innerHTML = test;
+document.getElementById('completeOrder').innerHTML = pushIntoHtmlValue;
