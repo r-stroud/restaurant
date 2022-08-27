@@ -1,82 +1,88 @@
 import { getMenu, getParty, getWaiters } from './main.js';
 
-console.log(getMenu())
-console.log(getParty())
-console.log(getWaiters())
+// // Display waiter name
+// const waiterCN = () => {
+//   const waiterCristi = getWaiters();
+//   let htmlWaiter = '';
+//   for (const staff of waiterCristi) {
+//     if (staff.employeeID === 1) {
+//       htmlWaiter =
+//         htmlWaiter +
+//         `<h3>Employee Id: ${staff.employeeID} - ${staff.firstName} ${staff.lastName}</h3>`;
+//     }
+//     document.getElementById('staffId').innerHTML = htmlWaiter;
+//   }
+// };
+// waiterCN();
 
+// partyId = [];
+// // // Loop through Party table
+// let tableSetup = '';
+// const partyCristi = getParty();
+// for (const par of partyCristi) {
+//   party = partyCristi.find((par) => par.partyId === partyId);
+//   tableSetup =
+//     tableSetup +
+//     `<h4>Table ID: ${par.tableId}</h4><p>Party Size: ${par.partySize}</p>`;
+// }
+// document.getElementById('tableSpace').innerHTML = tableSetup;
 
-
+// `<p>Entree: ${table.entree}</p><p>Drink: ${table.drink}</p> <p>Order Status: ${orderStatus[0]}</p>`;
 const pushIntoHtml = () => {
-
     // get all the parties
-    const parties = getParty();
-
+    const partiesCN = getParty();
     // get all the menu items
-    const menus = getMenu();
-
+    const menusCN = getMenu();
     // get all the waiters
-    const waiters = getWaiters();
+    const waitersCN = getWaiters();
 
-    // get the specificy waiter we are looking for by the waiter employee id
-    const waiterRobert = waiters.find((waiter) => waiter.employeeID === 4);
+    // find waiter by employee id
+    const waiterRob = waitersCN.find((waiter) => waiter.employeeID === 4);
 
+    document.getElementById("waiterRobs").innerHTML = `<h2>${waiterRob.firstName} ${waiterRob.lastName}</h2>`;
 
-    // waiter = object in the array
+    // party ids Cristi is working with
+    const PARTY_IDS_CN = [1, 8, 9];
 
-    // declare the list of the parties that we are working with
-    const PARTY_IDS = [1, 8, 9];
+    // declare variables to hold html elements
+    let partyInfoCN = '';
+    let menuInfoCN = '';
+    let waiterInfoCN = '';
 
-    // create a variable to hold the html elements with the party info
-    let partyInfo = "";
-    // create a variable to hold the html elements with the menu item info
-    let menuInfo = "";
-    // create a variable to hold the html elements with the waiter info
-    let waiterInfo = "";
-    // creates an empty array to hold our targeted party objects
-    const myParties = [];
+    // creates empty array to hold party objects
+    const myPartiesCN = [];
 
-    for (const partyId of PARTY_IDS) {
-        // defining the variable party to hold the party that we are looking for   
+    for (const partyid of PARTY_IDS_CN) {
         let party;
-        //setting the value of parties equal to a party where the party ID is equal to a party id in our list
-        party = parties.find((xparty) => xparty.partyId === partyId);
-        myParties.push(party);
+        party = partiesCN.find((x) => x.partyId === partyid);
+        myPartiesCN.push(party);
     }
-
-
     let myPartyTickets = [];
 
-    for (const newParty of myParties) {
-
-        // randomizes the id for food itmes
+    for (const party of myPartiesCN) {
+        // randomizes the index of food itmes
         const partyFoodItemId = Math.round(Math.random() * (7 - 0) + 0);
-        // random num 0-1 *(7-0)+0
-        // rounded
-        // .round = 0.2 = 0
-        // .random = random number between 0 - 1
-
-        // GOOGLE!!!!
-
-        // randomizes the id for drink items
+        // randomizes the index of drink items
         const partyDrinkItemId = Math.round(Math.random() * (11 - 8) + 8);
 
-        partyInfo = `<h2>PartyID ${newParty.partyId}</h2><h2> TableID ${newParty.tableId}</h2><h2>Party Size ${newParty.partySize} </h2><h2>Party Restrictions ${newParty.partyRestriction} </h2>`;
+        // display info from party array
+        partyInfoCN = `<h3><span>PartyID ${party.partyId}</span><span>TableID ${party.tableId}</span></h3><h3>Party Size ${party.partySize} </h3>`;
 
-        menuInfo = `<h2>Menu Items</h2><div>Item: ${menus[partyFoodItemId].menuItem}</div><div>Cost: ${menus[partyFoodItemId].cost}</div><div>Item: ${menus[partyDrinkItemId].menuItem}</div><div>Cost: ${menus[partyDrinkItemId].cost}</div>`;
-        // modifies the waiter info variable with the waitertaylor find funciton to push our targeted data into the string interpolation 
+        // display info from menu array
+        menuInfoCN = `<h4>Order: </h4><div class='box'><p>Item: ${menusCN[partyFoodItemId].menuItem}</p><p>Cost: ${menusCN[partyFoodItemId].cost}</p><p>Item: ${menusCN[partyDrinkItemId].menuItem}</p><p>Cost: ${menusCN[partyDrinkItemId].cost}</p><p>Party Restrictions: ${party.partyRestriction} </p></div>`;
 
-        waiterInfo = `<h2>First Name ${waiterRobert.firstName}</h2><h2>Last Name ${waiterRobert.lastName}</h2>`;
+        // display info from waiter table
+        //waiterInfoCN = `<p>First Name ${waiterCristi.firstName}<///p><p>Last Name ${waiterCristi.lastName}</p>`;
         //condences the looped data into one variable and pushes it into the myPartyTickets Array
 
-        const thisTicket = `<div>${partyInfo}</div><div>${menuInfo}</div><div>${waiterInfo}</div>`;
+        // info from all 3 tables
+        const thisTicket = `<p>${partyInfoCN}</p><p>${menuInfoCN}</p>`;
         myPartyTickets.push(thisTicket);
-
-
     }
     return myPartyTickets;
-
-}
-
+};
+// run function
 const pushIntoHtmlValue = pushIntoHtml();
 
-document.getElementById('completeOrder').innerHTML = pushIntoHtmlValue;
+// add to screen
+document.getElementById('orderRob').innerHTML = pushIntoHtmlValue.join('<hr />');
