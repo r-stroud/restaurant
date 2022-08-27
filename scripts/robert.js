@@ -1,244 +1,88 @@
-// const waitersRS = [
-//     {
-//         employeeID: 1,
-//         firstName: "Cristi",
-//         lastName: "Neames"
-//     },
+import { getMenu, getParty, getWaiters } from './main.js';
 
-//     {
-//         employeeID: 2,
-//         firstName: "Alex",
-//         lastName: "Cueto"
-//     },
-//     {
-//         employeeID: 3,
-//         firstName: "Taylor",
-//         lastName: "Evans"
-//     },
-//     {
-//         employeeID: 4,
-//         firstName: "Robert",
-//         lastName: "Stroud"
-//     },
-// ]
-
-for (staff of waitersRS) {
-  if (staff.employeeID === 4) {
-    document.getElementById(
-      'staffRob'
-    ).innerHTML = `<h2><span>Employee ID:</span>${staff.employeeID}</h2><div><h3>${staff.firstName}</h3><h3>${staff.lastName}</h3></div>`;
-  }
-}
-
-// const partyRS = [
-//     {
-//         partyID: 1,
-//         partySize: 4,
-//         tableID: 7,
-//         order: [
-//             {
-//                 menuID: Math.floor(Math.random() * 6) + 1,
-//                 drinkID: Math.floor(Math.random() * 5) + 1,
-//                 partyrestrictionID: 1,
-//             },
-//             {
-//                 menuID: Math.floor(Math.random() * 6) + 1,
-//                 drinkID: Math.floor(Math.random() * 5) + 1,
-//                 partyrestrictionID: 3,
-//             },
-//             {
-//                 menuID: Math.floor(Math.random() * 6) + 1,
-//                 drinkID: Math.floor(Math.random() * 5) + 1,
-//                 partyrestrictionID: 1,
-//             },
-//             {
-//                 menuID: Math.floor(Math.random() * 6) + 1,
-//                 drinkID: Math.floor(Math.random() * 5) + 1,
-//                 partyrestrictionID: 1,
-//             }
-//         ]
-//     },
-//     {
-//         partyID: 2,
-//         partySize: 2,
-//         tableID: 10,
-//         order: [
-//             {
-//                 menuID: Math.floor(Math.random() * 6) + 1,
-//                 drinkID: Math.floor(Math.random() * 5) + 1,
-//                 partyrestrictionID: 1,
-//             },
-//             {
-//                 menuID: Math.floor(Math.random() * 6) + 1,
-//                 drinkID: Math.floor(Math.random() * 5) + 1,
-//                 partyrestrictionID: 3,
-//             }
-//         ]
-//     },
-//     {
-//         partyID: 3,
-//         partySize: 6,
-//         tableID: 9,
-//         order: [
-//             {
-//                 menuID: Math.floor(Math.random() * 6) + 1,
-//                 drinkID: Math.floor(Math.random() * 5) + 1,
-//                 partyrestrictionID: 1,
-//             },
-//             {
-//                 menuID: Math.floor(Math.random() * 6) + 1,
-//                 drinkID: Math.floor(Math.random() * 5) + 1,
-//                 partyrestrictionID: 3,
-//             },
-//             {
-//                 menuID: Math.floor(Math.random() * 6) + 1,
-//                 drinkID: Math.floor(Math.random() * 5) + 1,
-//                 partyrestrictionID: 3,
-//             },
-//             {
-//                 menuID: Math.floor(Math.random() * 6) + 1,
-//                 drinkID: Math.floor(Math.random() * 5) + 1,
-//                 partyrestrictionID: 3,
-//             },
-//             {
-//                 menuID: Math.floor(Math.random() * 6) + 1,
-//                 drinkID: Math.floor(Math.random() * 5) + 1,
-//                 partyrestrictionID: 3,
-//             },
-//             {
-//                 menuID: Math.floor(Math.random() * 6) + 1,
-//                 drinkID: Math.floor(Math.random() * 5) + 1,
-//                 partyrestrictionID: 3,
-//             }
-//         ]
+// // Display waiter name
+// const waiterCN = () => {
+//   const waiterCristi = getWaiters();
+//   let htmlWaiter = '';
+//   for (const staff of waiterCristi) {
+//     if (staff.employeeID === 1) {
+//       htmlWaiter =
+//         htmlWaiter +
+//         `<h3>Employee Id: ${staff.employeeID} - ${staff.firstName} ${staff.lastName}</h3>`;
 //     }
-// ]
+//     document.getElementById('staffId').innerHTML = htmlWaiter;
+//   }
+// };
+// waiterCN();
 
-// const menuRS = [
-//     {
-//         menuID: 1,
-//         item: "Everything Pizza",
-//         cost: 15.99
-//     },
-//     {
-//         menuID: 2,
-//         item: "Everything Burger",
-//         cost: 6.99
-//     },
-//     {
-//         menuID: 3,
-//         item: "Everything Quesadilla",
-//         cost: 4.99
-//     },
-//     {
-//         menuID: 4,
-//         item: "Everything Sandwich",
-//         cost: 5.99
-//     },
-//     {
-//         menuID: 5,
-//         item: "Everything Spaghetti",
-//         cost: 8.99
-//     },
-//     {
-//         menuID: 6,
-//         item: "A Little Bit of Everything",
-//         cost: 19.99
-//     }
-// ]
+// partyId = [];
+// // // Loop through Party table
+// let tableSetup = '';
+// const partyCristi = getParty();
+// for (const par of partyCristi) {
+//   party = partyCristi.find((par) => par.partyId === partyId);
+//   tableSetup =
+//     tableSetup +
+//     `<h4>Table ID: ${par.tableId}</h4><p>Party Size: ${par.partySize}</p>`;
+// }
+// document.getElementById('tableSpace').innerHTML = tableSetup;
 
-// const drinkMenuRS = [
-//     {
-//         drinkID: 1,
-//         item: "Water",
-//         cost: 0.00
-//     },
-//     {
-//         drinkID: 2,
-//         item: "Coke",
-//         cost: 1.99
-//     },
-//     {
-//         drinkID: 3,
-//         item: "Lemonade",
-//         cost: 1.99
-//     },
-//     {
-//         drinkID: 4,
-//         item: "Tea",
-//         cost: 1.99
-//     },
-//     {
-//         drinkID: 5,
-//         item: "Beer",
-//         cost: 3.99
-//     },
-// ]
+// `<p>Entree: ${table.entree}</p><p>Drink: ${table.drink}</p> <p>Order Status: ${orderStatus[0]}</p>`;
+const pushIntoHtml = () => {
+    // get all the parties
+    const partiesCN = getParty();
+    // get all the menu items
+    const menusCN = getMenu();
+    // get all the waiters
+    const waitersCN = getWaiters();
 
-// const partyRestrictionRS = [
-//     { Id: 1, restriction: 'none' },
-//     { Id: 2, restriction: 'gluten-free' },
-//     { Id: 3, restriction: 'peanut-free' },
-// ];
+    // find waiter by employee id
+    const waiterRob = waitersCN.find((waiter) => waiter.employeeID === 4);
 
-let test = '';
+    document.getElementById("waiterRobs").innerHTML = `<h2>${waiterRob.firstName} ${waiterRob.lastName}</h2>`;
 
-let numRS = 1;
+    // party ids Cristi is working with
+    const PARTY_IDS_CN = [1, 8, 9];
 
-function matchMenuID(num) {
-  for (const menus of menuRS) {
-    if (menus.menuID === num) return menus.item;
-  }
-}
+    // declare variables to hold html elements
+    let partyInfoCN = '';
+    let menuInfoCN = '';
+    let waiterInfoCN = '';
 
-function matchDrinkID(num) {
-  for (const menus of drinkMenuRS) {
-    if (menus.drinkID === num) return menus.item;
-  }
-}
+    // creates empty array to hold party objects
+    const myPartiesCN = [];
 
-function menuCost(num) {
-  for (const menusCost of menuRS) {
-    if (menusCost.menuID === num) return menusCost.cost;
-  }
-}
+    for (const partyid of PARTY_IDS_CN) {
+        let party;
+        party = partiesCN.find((x) => x.partyId === partyid);
+        myPartiesCN.push(party);
+    }
+    let myPartyTickets = [];
 
-function drinkCost(num) {
-  for (const drinksCost of drinkMenuRS) {
-    if (drinksCost.drinkID === num) return drinksCost.cost;
-  }
-}
+    for (const party of myPartiesCN) {
+        // randomizes the index of food itmes
+        const partyFoodItemId = Math.round(Math.random() * (7 - 0) + 0);
+        // randomizes the index of drink items
+        const partyDrinkItemId = Math.round(Math.random() * (11 - 8) + 8);
 
-let costMenu = 0;
+        // display info from party array
+        partyInfoCN = `<h3><span>PartyID ${party.partyId}</span><span>TableID ${party.tableId}</span></h3><h3>Party Size ${party.partySize} </h3>`;
 
-let costDrinkMenu = 0;
+        // display info from menu array
+        menuInfoCN = `<h4>Order: </h4><div class='box'><p>Item: ${menusCN[partyFoodItemId].menuItem}</p><p>Cost: ${menusCN[partyFoodItemId].cost}</p><p>Item: ${menusCN[partyDrinkItemId].menuItem}</p><p>Cost: ${menusCN[partyDrinkItemId].cost}</p><p>Party Restrictions: ${party.partyRestriction} </p></div>`;
 
-for (const parties of partyRS) {
-  test =
-    test +
-    `<h2><span>Party ID: </span>${parties.partyID}</h2>
-    <div>
-    <h3><span>Party Size: </span>${parties.partySize}</h3>
-    <h3><span>Table Number: </span>${parties.tableID}</h3>
-    </div>`;
-  for (const orders of parties.order) {
-    // test = test + `<h4><span>Order ${numRS++}:</span> ${matchMenuID(orders.menuID)} & ${matchDrinkID(orders.drinkID)}</h4>`
-    test =
-      test +
-      `<h4><span>Order ${numRS++}:</span></h4> <ul><li>${matchMenuID(
-        orders.menuID
-      )}</li><li>${matchDrinkID(orders.drinkID)}</li></ul>`;
+        // display info from waiter table
+        //waiterInfoCN = `<p>First Name ${waiterCristi.firstName}<///p><p>Last Name ${waiterCristi.lastName}</p>`;
+        //condences the looped data into one variable and pushes it into the myPartyTickets Array
 
-    costMenu = costMenu + menuCost(orders.menuID);
-    costDrinkMenu = costDrinkMenu + drinkCost(orders.drinkID);
-  }
-  test =
-    test +
-    `<h5><span>Total Cost: </span>$${parseFloat(
-      costMenu + costDrinkMenu
-    ).toFixed(2)}</h5>`;
-  costMenu = 0;
-  costDrinkMenu = 0;
-}
+        // info from all 3 tables
+        const thisTicket = `<p>${partyInfoCN}</p><p>${menuInfoCN}</p>`;
+        myPartyTickets.push(thisTicket);
+    }
+    return myPartyTickets;
+};
+// run function
+const pushIntoHtmlValue = pushIntoHtml();
 
-document.getElementById('orderRob').innerHTML = test;
+// add to screen
+document.getElementById('orderRob').innerHTML = pushIntoHtmlValue.join('<hr />');

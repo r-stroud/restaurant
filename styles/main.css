@@ -128,7 +128,7 @@ h1 {
   margin: 80px 2% 20px;
 }
 
-.container > * {
+.container>* {
   flex: 1 100%;
 }
 
@@ -171,80 +171,13 @@ h1 {
   border: 1px solid black;
   box-shadow: 0px 0px 0px 5px #f06c9b;
 }
+
 span {
   padding-right: 20px;
 }
-#staffRob {
-  border-bottom: solid #96c9dc 3px;
-  margin-bottom: 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  color: #61a0af;
-}
 
-#staffRob div {
-  display: flex;
-}
-
-#staffRob h2 {
-  padding-left: 0.5vw;
-}
-
-#staffRob h3 {
-  /* padding-left: 0.5vw; */
-  padding-right: 0.5vw;
-}
-
-#staffRob span {
-  padding-right: 0.6vw;
-}
-
-#orderRob {
-  /* border: solid #96c9dc 3px; */
-  border-top: none;
-  margin-top: 0;
-}
-
-#orderRob div {
-  display: flex;
-}
-
-#orderRob h2 {
-  font-size: 17px;
-  padding-bottom: 0;
-  margin-bottom: 0;
-  border-top: solid #f9b9b7 3px;
-  padding-left: 0.8vw;
-  padding-top: 5px;
-  margin-top: 0;
-}
-
-#orderRob h3 {
-  padding-right: 1.5vw;
-  font-size: 16px;
-  padding-left: 1.6vw;
-}
-
-#orderRob h4 {
-  margin-left: 5vw;
-  font-size: 15px;
-}
-
-#orderRob li {
-  margin-left: 5vw;
-  font-size: 15px;
-}
-
-#orderRob h5 {
-  text-align: right;
-  margin-bottom: 14px;
-  padding-right: 0.8vw;
-  font-size: 14px;
-}
-
-#orderRob span {
+span {
   font-style: italic;
-  padding-right: 0.6vw;
+  /* padding-right: 0.6vw; */
   color: #61a0af;
 }
