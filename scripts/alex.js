@@ -1,90 +1,67 @@
-// const tablesAlex = [
-//     { tableId: 3,
-//       partySize: 4,
-//       entree: 'Chicken, Pizza, Tacos',
-//       drink: 'water, 2 sodas, 1 wine',
-//       howMuch: '$25.43'
-//     },
+import { getMenu, getParty, getWaiters } from './main.js';
 
-//     { tableId: 4,
-//       partySize: 8,
-//       entree: '2 Pizzas, 2 Tacos, Pasta, 3 Burritos',
-//       drink: '4 beers, 1 water, 1 wine, 2 coffees',
-//       howMuch: '$47.99'
-//     },
+console.log(getMenu());
+console.log(getParty());
+console.log(getWaiters());
 
-//     { tableId: 5,
-//       partySize: 6,
-//       entree: '3 Tacos, 3 Pizzas',
-//       drink: '6 cokes',
-//       howMuch: '$30.18'
-//     },
-//   ];
 
-let tableSetup1 = '';
+const pushIntoHtml = () => {
 
-for (const table of tablesAlex) {
-  tableSetup1 =
-    tableSetup1 +
-    `<h2>Table: ${table.tableId}</h2> 
-        <p>Party Size: ${table.partySize}</p>
-        <p>Food: ${table.entree}</p>
-        <p>Drinks: ${table.drink}</p>
-        <h4>Total Price: ${table.howMuch}</h4>`;
+const parties = getParty();
+
+const menus = getMenu();
+
+const waiters = getWaiters();
+
+const waiterAlex = waiters.find((waiter) => waiter.employeeID === 2); 
+
+document.getElementById(
+    "alexWaiter"
+  ).innerHTML = `<h2>${waiterAlex.firstName} ${waiterAlex.lastName}</h2>`;
+
+
+
+//  *********  this is to verify it works *************
+// const waiterExample = waiters.find((alex) => alex.employeeID === 2);
+// console.log(waiterAlex)
+
+const PARTY_IDS = [5, 6, 7];
+
+let partyInfo = "";
+let menuInfo = "";
+let waiterInfo = "";
+
+const myParties = [];
+
+for (const partyId of PARTY_IDS) {
+    let party;
+    party = parties.find((xparty) => xparty.partyId === partyId);
+    myParties.push(party);
 }
-document.getElementById('waiterName').innerHTML = tableSetup1;
 
-//********************************************************************************************
+let myPartyTickets = [];
+    
+for (const newParty of myParties) {
+        
 
-// this is practice work
+    const partyFoodItemId = Math.round(Math.random() * (7 - 0) + 0);
 
-// const foodMenuItems = [
-//   { person: 1,
-//     item: "Pizza",
-//     cost: 10.99
-//   },
+    const partyDrinkItemId = Math.round(Math.random() * (11 - 8)+  8);
 
-//   {person: 2,
-//    item: "Tacos",
-//    cost: 4.99
-//   },
+    partyInfo = `<h3><span>PartyID ${newParty.partyId}</span><span> TableID ${newParty.tableId}</span></h3><h3>Party Size ${newParty.partySize} </h3>`;
 
-//   {person: 3,
-//    item: "Pasta",
-//    cost: 7.99
-//   },
+    menuInfo = `<h4>Menu Items</h4><div class ='box'><p>Item: ${menus[partyFoodItemId].menuItem}</p><p>Cost: ${menus[partyFoodItemId].cost}</p><p>Item: ${menus[partyDrinkItemId].menuItem}</p><p>Cost: ${menus[partyDrinkItemId].cost}</p><p>Party Restrictions: ${newParty.partyRestriction} </p></div>`;
 
-//   {person: 4,
-//     item: "Chicken Nugetts",
-//     cost: 5.99
-//   },
+    waiterInfo = `<h2>First Name ${waiterAlex.firstName}</h2><h2>Last Name ${waiterAlex.lastName}</h2>`;
+       
+    const thisTicket = `<div>${partyInfo}</div><div>${menuInfo}</div>`;
+    myPartyTickets.push(thisTicket);
+}
 
-//   {person: 5,
-//    item: "Burger",
-//    cost: 8.99
-//   },
+    return myPartyTickets;
 
-//   {person: 6,
-//    item: "Wings",
-//    cost: 19.99
-//   }
-// ]
+}
 
-// //****this displays only on the console and not the website
-// // console.log(foodMenuItems[0])
+const pushIntoHtmlValue = pushIntoHtml ();
 
-// for(const food of foodMenuItems) {
-//   console.log(food.item)
-// }
-
-// let displayOrder = "";
-
-// for (const food of foodMenuItems) {
-//   displayOrder=displayOrder + `<h2>${food.item}</h4><h4>${food.cost}</h4>`
-// }
-
-//   document.getElementById('here').innerHTML = displayOrder;
-
-// // // this is as referrence for price loop
-
-// document.getElementById(`here`).innerHTML = displayFood;
+document.getElementById('waiter2').innerHTML = pushIntoHtmlValue.join('<hr />');
