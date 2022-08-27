@@ -15,6 +15,12 @@ const waiters = getWaiters();
 
 const waiterAlex = waiters.find((waiter) => waiter.employeeID === 2); 
 
+document.getElementById(
+    "alexWaiter"
+  ).innerHTML = `<h2>${waiterAlex.firstName} ${waiterAlex.lastName}</h2>`;
+
+
+
 //  *********  this is to verify it works *************
 // const waiterExample = waiters.find((alex) => alex.employeeID === 2);
 // console.log(waiterAlex)
@@ -22,9 +28,7 @@ const waiterAlex = waiters.find((waiter) => waiter.employeeID === 2);
 const PARTY_IDS = [5, 6, 7];
 
 let partyInfo = "";
-
 let menuInfo = "";
-
 let waiterInfo = "";
 
 const myParties = [];
@@ -44,13 +48,13 @@ for (const newParty of myParties) {
 
     const partyDrinkItemId = Math.round(Math.random() * (11 - 8)+  8);
 
-    partyInfo = `<h2>PartyID ${newParty.partyId}</h2><h2> TableID ${newParty.tableId}</h2><h2>Party Size ${newParty.partySize} </h2><h2>Party Restrictions ${newParty.partyRestriction} </h2>`;
+    partyInfo = `<h3><span>PartyID ${newParty.partyId}</span><span> TableID ${newParty.tableId}</span></h3><h3>Party Size ${newParty.partySize} </h3>`;
 
-    menuInfo = `<h2>Menu Items</h2><div>Item: ${menus[partyFoodItemId].menuItem}</div><div>Cost: ${menus[partyFoodItemId].cost}</div><div>Item: ${menus[partyDrinkItemId].menuItem}</div><div>Cost: ${menus[partyDrinkItemId].cost}</div>`;
+    menuInfo = `<h4>Menu Items</h4><div class ='box'><p>Item: ${menus[partyFoodItemId].menuItem}</p><p>Cost: ${menus[partyFoodItemId].cost}</p><p>Item: ${menus[partyDrinkItemId].menuItem}</p><p>Cost: ${menus[partyDrinkItemId].cost}</p><p>Party Restrictions: ${newParty.partyRestriction} </p></div>`;
 
     waiterInfo = `<h2>First Name ${waiterAlex.firstName}</h2><h2>Last Name ${waiterAlex.lastName}</h2>`;
        
-    const thisTicket = `<div>${partyInfo}</div><div>${menuInfo}</div><div>${waiterInfo}</div>`;
+    const thisTicket = `<div>${partyInfo}</div><div>${menuInfo}</div>`;
     myPartyTickets.push(thisTicket);
 }
 
@@ -60,4 +64,4 @@ for (const newParty of myParties) {
 
 const pushIntoHtmlValue = pushIntoHtml ();
 
-document.getElementById('waiter2').innerHTML = pushIntoHtmlValue;
+document.getElementById('waiter2').innerHTML = pushIntoHtmlValue.join('<hr />');
