@@ -170,10 +170,17 @@ const pushIntoHtml = () => {
     // get all the waiters
     const waiters = getWaiters();
 
+  
+   
 
 
     // get the specificy waiter we are looking for by the waiter employee id
     const waiterTaylor = waiters.find((waiter) => waiter.employeeID === 3);
+
+    document.getElementById(
+        'taylorTitle'
+      ).innerHTML = `<h2>${waiterTaylor.firstName} ${waiterTaylor.lastName}</h2>`;
+
     // declare the list of the parties that we are working with
     const PARTY_IDS = [2, 3, 4];
 
@@ -201,13 +208,12 @@ const pushIntoHtml = () => {
         // randomizes the id for food itmes
         const partyFoodItemId = Math.round(Math.random() * (7 - 0) + 0);
         // randomizes the id for drink items
-        const partyDrinkItemId = Math.round(Math.random() * (11 - 8)+  8);
+        const partyDrinkItemId = Math.round(Math.random() * (11 - 8) +  8);
         // modifies the empty partyinfo variable to include string interpolation and the party variable that finds select parties from the get party function
-        partyInfo = `<h2>PartyID ${party.partyId}</h2><h2> TableID ${party.tableId}</h2><h2>Party Size ${party.partySize} </h2><h2>Party Restrictions ${party.partyRestriction} </h2>`;
+        partyInfo = `<h3>PartyID ${party.partyId} TableID ${party.tableId}</h3><h3>Party Size ${party.partySize} </h3>`;
         // modifies the menuinfo variable to pull in the object from the getmenus and used the partyfood itemID to 
-        menuInfo = `<h2>Menu Items</h2><div>Item: ${menus[partyFoodItemId].menuItem}</div><div>Cost: ${menus[partyFoodItemId].cost}</div><div>Item: ${menus[partyDrinkItemId].menuItem}</div><div>Cost: ${menus[partyDrinkItemId].cost}</div>`;
-        // modifies the waiter info variable with the waitertaylor find funciton to push our targeted data into the string interpolation 
-        waiterInfo = `<h2>First Name ${waiterTaylor.firstName}</h2><h2>Last Name ${waiterTaylor.lastName}</h2>`;
+        menuInfo = `<h4>Order</h4><div class='box'<p>Item: ${menus[partyFoodItemId].menuItem}</p><p>Cost: ${menus[partyFoodItemId].cost}</p><p>Item: ${menus[partyDrinkItemId].menuItem}</p><p>Cost: ${menus[partyDrinkItemId].cost}</p><p>Party Restrictions ${party.partyRestriction} </p></div>`;
+       
         //condences the looped data into one variable and pushes it into the myPartyTickets Array
         
         
