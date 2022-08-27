@@ -176,33 +176,8 @@ span {
   padding-right: 20px;
 }
 
-#orderRob {
-
-  border-top: none;
-  margin-top: 0;
-}
-
 span {
   font-style: italic;
   /* padding-right: 0.6vw; */
   color: #61a0af;
-}
-
-#table1 h1 {
-  border-bottom: #f06c9b solid;
-  color: #61a0af;
-}
-
-#table1 h2 {
-  border-bottom: #f06c9b solid;
-  color: black;
-}
-
-#taylorTitle {
-  color: #61a0af;
-  border-bottom: #f06c9b solid;
-}
-
-#table1 {
-  padding: 20px;
 }
